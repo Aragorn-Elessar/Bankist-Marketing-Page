@@ -80,3 +80,25 @@ tabsContainer.addEventListener('click', function (e) {
 });
 
 // Menu fade animation
+const handleHover = (e, opacity) => {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = e.target.closest('.nav').querySelectorAll('.nav__link');
+    // Suppose we have several other images
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = opacity;
+    });
+    logo.style.opacity = opacity;
+  }
+};
+
+// TODO: use bind method
+nav.addEventListener('mouseover', function (e) {
+  handleHover(e, 0.5);
+});
+
+nav.addEventListener('mouseout', function (e) {
+  handleHover(e, 1);
+});
