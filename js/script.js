@@ -1,7 +1,10 @@
 'use strict';
 
 ///////////////////////////////////////
-// Modal window
+/**
+ * Elements
+ *
+ */
 
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
@@ -15,7 +18,12 @@ const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
 
 ///////////////////////////////////////
+/**
+ * Main Functions
+ *
+ */
 
+// Modal window
 const openModal = function (e) {
   // Prevent page from scrolling up on button click
   e.preventDefault();
